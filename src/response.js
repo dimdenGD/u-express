@@ -864,4 +864,8 @@ module.exports = class Response extends Writable {
     get writableFinished() {
         return this.finished;
     }
+
+    get writableEnded() {
+        return this.finished;
+    }
 }

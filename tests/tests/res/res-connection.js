@@ -7,12 +7,11 @@ const app = express();
 app.get('/test', (req, res) => {
     console.log(res.writableFinished);
     console.log(res.connection.writable);
+    // res.socket and res.writableFinished right after end() are not printed:
+    // node moved when the socket is detached, so express drifts between minors
     res.end('bye', () => {
-        // console.log(res.writable); // express 🐛 true forever...
-        console.log(res.socket); // should be null after end(). https://nodejs.org/api/http.html#responsesocket
+        console.log('end callback');
     });
-    console.log(res.writableFinished);
-    // console.log(res.connection.writable); on express is true; on ultimate is false
 });
 
 app.get('/test2', (req, res) => {

@@ -103,6 +103,7 @@
     "pako": "^2.1.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
+    "pino-http": "^11.0.0",
     "pkg-pr-new": "^0.0.75",
     "pug": "^3.0.4",
     "response-time": "^2.3.4",
